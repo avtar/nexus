@@ -11,10 +11,10 @@ stages:
   - test
   - cleanup
 
-before_script:
-  - "mkdir -p ../.vagrant-$CI_BUILD_REF_NAME"
-  - rm -fr .vagrant
-  - "ln -s ../.vagrant-$CI_BUILD_REF_NAME .vagrant"
+#before_script:
+#  - "mkdir -p ../.vagrant-$CI_BUILD_REF_NAME"
+#  - rm -fr .vagrant
+#  - "ln -s ../.vagrant-$CI_BUILD_REF_NAME .vagrant"
 
 build:
   stage: build
@@ -33,5 +33,5 @@ cleanup:
   stage: cleanup
   script:
     - vagrant destroy -f
-    - "rm -fr ../.vagrant-$CI_BUILD_REF_NAME"
+    #- "rm -fr ../.vagrant-$CI_BUILD_REF_NAME"
   when: always
